@@ -69,8 +69,7 @@ class Main:
                                  t.Resize(40, interpolation=Image.CUBIC),
                                  t.ToTensor()])
 
-        self.device = torch.device('cpu')
-        # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         self.transition = namedtuple('Transition', ('state', 'action', 'next_state', 'reward'))
         self.batch_size = batch_size_
